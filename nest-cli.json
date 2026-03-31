@@ -1,0 +1,43 @@
+import { Global, Module } from '@nestjs/common';
+import { StateManagerService } from './state-manager.service';
+import { WorkflowService } from './workflow.service';
+import { PermissionsService } from './permissions.service';
+import { DependenciesService } from './dependencies.service';
+import { NotificationEventService } from './notification-event.service';
+import { AssetDomainService } from './asset-domain.service';
+import { OwnershipDomainService } from './ownership-domain.service';
+import { LegalCaseDomainService } from './legal-case-domain.service';
+import { CitizenStatusService } from './citizen-status.service';
+import { Citizen360AggregatorService } from './citizen360-aggregator.service';
+import { IntegrationSyncService } from './integration-sync.service';
+
+@Global()
+@Module({
+  providers: [
+    StateManagerService,
+    WorkflowService,
+    PermissionsService,
+    DependenciesService,
+    NotificationEventService,
+    AssetDomainService,
+    OwnershipDomainService,
+    LegalCaseDomainService,
+    CitizenStatusService,
+    Citizen360AggregatorService,
+    IntegrationSyncService,
+  ],
+  exports: [
+    StateManagerService,
+    WorkflowService,
+    PermissionsService,
+    DependenciesService,
+    NotificationEventService,
+    AssetDomainService,
+    OwnershipDomainService,
+    LegalCaseDomainService,
+    CitizenStatusService,
+    Citizen360AggregatorService,
+    IntegrationSyncService,
+  ],
+})
+export class EnginesModule {}
