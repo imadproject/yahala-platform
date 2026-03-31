@@ -1,0 +1,14 @@
+{
+  "name": "yahala-gov-platform",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": ["apps/api", "apps/web"],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w @yahala/api\" \"npm run dev -w @yahala/web\"",
+    "build": "npm run build -w @yahala/api && npm run build -w @yahala/web",
+    "lint": "npm run lint -w @yahala/api && npm run lint -w @yahala/web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
